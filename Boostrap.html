@@ -1,0 +1,712 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+    h4{
+        text-transform: uppercase;
+    }
+    .aaa{
+        display: inline-block;
+    }
+    h6{
+        display: inline;
+    }
+    #password,#register,#submit{
+        display: none;
+    }
+</style>
+<div class="container px-0 ">
+  <div class="d-flex justify-content-center border border-white">
+    <div class="card inactive">
+        <div class="card-header bg-primary text-center text-white ">
+            <h4>hyper</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="text-center">Sign in</h5>
+            <p class="card-text">
+                Enter your username and pass to access admin panel.
+            </p>
+        <div class="form-group">
+            <label>Username</label>
+            <input class="form-control" type="text" name="text"/>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <small class="text-danger float-right" onclick="openpassword()">Forgot your password?</small>
+            <input class="form-control" type="password" name="text"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" onclick="opensubmit()">Submit</button>
+        </div>
+        <div>
+            <h6>Username</h6>:text
+            <h6>Password</h6>:text
+        </div>
+        </div>
+        <div class="card-footer aaa text-center py-4">
+            Don't have an account?
+            <h6 onclick="openregister()">Register</h6>
+        </div>
+    </div>
+    <div class="card" id="password">
+        <div class="card-header bg-primary text-center text-white">
+            <h4>hyper</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="text-center">Reset Password</h5>
+            <p class="card-text">
+                Enter your email address and we'll send you an email withinstructions to reset yourpassword
+            </p>
+            <div class="form-group">
+                <label> Your Username</label>
+                <input class="form-control" type="text" name="text" placeholder="Enter your username"/>
+                <div class="invalid-feedback">
+                    Please provide a valid state.
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" >Submit</button>
+            </div>
+        </div>
+        <div class="card-footer text-center py-4">
+            Back to
+            <h6 onclick="opensignin('#password')">Sign in</h6>
+        </div>
+    </div> 
+    <div class="card" id="register">
+        <div class="card-header bg-primary text-center text-white">
+            <h4>hyper</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="text-center">Creat Your Account</h5>
+            <p class="card-text">
+                Don't have an account? Creat your account,it takes less than a minute
+            </p>
+            <div class="form-group">
+               <label class="mt-3">Full Name</label>
+               <input class="form-control" type="text" placeholder="Enter your name"/>
+            </div>
+            <div class="form-group">
+               <label>Email address</label>
+               <input class="form-control" type="email" placeholder="Enter your email"/>
+            </div>
+            <div class="form-group">
+               <label>Password</label>
+               <input class="form-control" type="password" placeholder="Enter your password"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </div>    
+        <div class="card-footer text-center py-4">
+            Already have an account?
+            <h6 onclick="openregi('#register')">Sign in</h6>
+        </div> 
+    </div>
+    <div class="container-fluid px-0" id="submit">
+        <div class="row">
+            <div class="col-md-3 bg-dark text-white">
+                <div class="modal-body ">
+                    <div class="container-fluid px-0" >
+                        <div class="left-container py-4 px-3">
+                            <h6 class="px-5">HYPER</h6>
+                            <small class=" row my-4 pl-2">navigation</small>
+                            <div class="row mt-3 mb-4">
+                                <div class="col-md-8">
+                                  <h6 >Dashboard</h6>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="bg-success text-center " id="xyz">3</div>
+                                </div>
+                            </div>    
+                            <div class="dropdown mb-3">
+                                <div  class=" dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Apps
+                                </div>
+                                <div class="dropdown-menu bg-dark text-white">
+                                  <p>Calendar</p>  
+                                  <p>Project</p>
+                                </div>
+                            </div>
+                            <div class="dropdown mb-3">
+                                <div  class="dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Pages
+                                </div>
+                                <div class="dropdown-menu bg-dark text-white">
+                                  <p>Starter</p>  
+                                  <p>Erofile</p>
+                                  <p>Error-404</p>
+                                  <p>Error-500</p>
+                                </div>
+                            </div>
+                            <div class="dropdown mb-3">
+                                <div  class=" dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Ul Kit
+                                </div>
+                                <div class="dropdown-menu bg-dark text-white">
+                                 <p>Buttons</p>
+                                 <p>Cards</p>
+                                 <p>General</p>
+                                 <p>Grid</p>
+                                 <p>Icon</p>
+                                 <p>Modals</p>
+                                 <p>Notifications</p>
+                                 <p>Spinners</p>
+                                 <p>Tabs</p>
+                                 <p>Typography</p>
+                                 <p>Widgets</p>
+                                </div>
+                            </div>
+                            <div class="dropdown mb-3">
+                                <div  class="dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Forms
+                                </div>
+                                <div class="dropdown-menu bg-dark text-white">
+                                  <p>Basic elements</p>
+                                  <p>Form advanced</p>
+                                  <p>Form validations</p>
+                                  <p>Form wizard</p>
+                                  <p>File upload</p>
+                                  <p>Editors</p>
+                                </div>
+                            </div>
+                            <div class="dropdown mb-3">
+                                <div  class=" dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Features
+                                </div>
+                                <div class="dropdown-menu bg-dark text-white">
+                                  <p>Charts</p>
+                                  <p>Tables</p>
+                                  <p>Google maps</p>
+                                </div>
+                            </div>
+                            <div class="card mt-5 border border-secondary bg-dark">
+                                <div class="card-img-top text-center my-3">
+                                  <img src="aaa"/>
+                                </div>
+                                <div class="card-body text-center">
+                                  <h6>Unlimited Access</h6>
+                                  <p>Upgrade to plan to get access to unlimited reports</p>
+                                  <button class="btn btn-outline-light mt-3 ">Upgrade</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="header-container bg-primary px-0 text-white">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="dropleft">
+                                <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="C:\Users\pc\downloads\download (5).Png" height="20px" width="20px"/>
+                                </a>
+                                <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <div class="left-container bg-dark py-4 px-3">
+                                        <h6 class="px-5 text-white bbb">hyper</h6>
+                                        <small class="row text-white bbb my-4 pl-2">navigation</small>
+                                        <div class="row mt-3 mb-4">
+                                            <div class="col-md-8">
+                                              <h6 class="text-white">Dashboard</h6>
+                                            </div>
+                                            <div class="col-md-3">
+                                              <div class="bg-success text-white text-center " id="xyz">3</div>
+                                            </div>
+                                        </div>    
+                                        <div class="dropdown mb-3">
+                                            <div  class="text-white dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Apps
+                                            </div>
+                                            <div class="dropdown-menu bg-dark text-white">
+                                              <p>Calendar</p>  
+                                              <p>Project</p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown mb-3">
+                                            <div  class="text-white dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Pages
+                                            </div>
+                                            <div class="dropdown-menu bg-dark text-white">
+                                              <p>Starter</p>  
+                                              <p>Erofile</p>
+                                              <p>Error-404</p>
+                                              <p>Error-500</p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown mb-3">
+                                            <div  class="text-white dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Ul Kit
+                                            </div>
+                                            <div class="dropdown-menu bg-dark text-white">
+                                             <p>Buttons</p>
+                                             <p>Cards</p>
+                                             <p>General</p>
+                                             <p>Grid</p>
+                                             <p>Icon</p>
+                                             <p>Modals</p>
+                                             <p>Notifications</p>
+                                             <p>Spinners</p>
+                                             <p>Tabs</p>
+                                             <p>Typography</p>
+                                             <p>Widgets</p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown mb-3">
+                                            <div  class="text-white dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Forms
+                                            </div>
+                                            <div class="dropdown-menu bg-dark text-white">
+                                              <p>Basic elements</p>
+                                              <p>Form advanced</p>
+                                              <p>Form validations</p>
+                                              <p>Form wizard</p>
+                                              <p>File upload</p>
+                                              <p>Editors</p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown mb-3">
+                                            <div  class="text-white dropdown-toggle pl-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Features
+                                            </div>
+                                            <div class="dropdown-menu bg-dark text-white">
+                                              <p>Charts</p>
+                                              <p>Tables</p>
+                                              <p>Google maps</p>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-dark text-white mt-5 border border-secondary">
+                                            <div class="card-img-top text-center my-3">
+                                              <img src="aaa"/>
+                                            </div>
+                                            <div class="card-body text-center">
+                                              <h6>Unlimited Access</h6>
+                                              <p>Upgrade to plan to get access to unlimited reports</p>
+                                              <button class="btn btn-outline-light mt-3 ">Upgrade</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <span>Search Projects..</span>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end align-items-center">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="dropright">
+                                        <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="C:\Users\pc\downloads\download (4).PNG" height="20px" width="20px"/>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                           <a class="dropdown-item" href="#"> 4 New Messages</a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>Ashely Briggs</p>
+                                                <small>Nam pretium turpis et arcu.Duis arcu tortor.</small>
+                                                <p>15m ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>Chris Wood</p>
+                                                <small>Curabitur ligula sapien euismod vitae.</small>
+                                                <p>2h ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>Stacie Hall</p>
+                                                <small>Pellentesque auctor neque nec urna.</small>
+                                                <p>4h ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>Bertha Martin</p>
+                                                <small>Aenean tellus metus,bibendum sed,posuere ac,mattis non.</small>
+                                                <p>5h ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">Show all messages</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="dropright">
+                                        <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="C:\Users\pc\downloads\download (6).JPG" height="20px" width="20px"/>
+                                        </a>
+                                        <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                           <a class="dropdown-item" href="#"> 4 New Notifications</a>
+                                            <li class="dropdown-item" href="#">
+                                                <p>Update completed</p>
+                                                <small>Restart server 12 to complete the update.</small>
+                                                <p>2h ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>Loram ipsum</p>
+                                                <small>Aliquam ex eros,imperdiet vulputate hendrerit et.</small>
+                                                <p>6h ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>Login form 192.186.1.1</p>
+                                                <p>6h ago</p>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <p>New connections</p>
+                                                <small>Anna accepted your request.</small>
+                                                <p>12h ago</p>
+                                            </a>
+                                            <a class=" dropdown-item" href="#">Show all notifications</a>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="dropdown">
+                                        <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="C:\Users\pc\downloads\download.JPG" height="20px" width="20px"/>
+                                        </a>
+                                        <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <div class="row">
+                                                <button class="btn ml-3">
+                                                    <img src="C:\Users\pc\downloads\download.jpg" height="30px" width="30px"/>English
+                                                </button>
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn ml-3">
+                                                    <img src="C:\Users\pc\downloads\download (1).jpg" height="30px" width="30px"/>Spanish
+                                                </button>
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn ml-3">
+                                                    <img src="C:\Users\pc\downloads\download (2).png" height="30px" width="30px"/>German
+                                                </button>
+                                            </div>
+                                            <div class="row">
+                                                <button class=" btn ml-3">
+                                                    <img src="C:\Users\pc\downloads\download (3).jpg" height="30px" width="30px"/>Dutch
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="dropdown">
+                                        <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="C:\Users\pc\downloads\14.PNG" height="20px" width="20px"/>
+                                        </a>
+                                        <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Profile</a>
+                                        <a class="dropdown-item" href="#">Analatics</a>
+                                        <a class="dropdown-item" href="#">settings & Privacy</a>
+                                        <a class="dropdown-item" href="#">Help</a>
+                                        <a class="dropdown-item" href="#" onclick="signout()">Signout</a>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-container">
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="card-header">
+                                <h4>2.562</h4>
+                                <small>Sales Today</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-header">
+                                <h4>17.212</h4>
+                                <small>Visitors Today</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="card-header">
+                                <h4>$24.300</h4>
+                                <small>Total Earnings</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-header">
+                                <h4>43</h4>
+                                <small>Pending Orders</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="C:\Users\pc\downloads\flipkart.PNG " width="100%" height="300px"/> 
+                    </div>
+                    <div class=" card mt-5 ">
+                        <div class="card-header d-flex justify-content-between px-4 bg-transparent">
+                            <p>Daily feeds</p>
+                            <button class="btn btn-primary text-white">Today</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="aaa mb-3">
+                                <div class="d-flex justify-content-between ">
+                                    <div>
+                                        <img src="#" class="mr-2"/>
+                                        Aschely Briggs started following Stacie Hall
+                                    </div>
+                                    <div>5m ago</div>
+                                </div>
+                                <small class="ml-5 ">Today 7:51pm</small> 
+                            </div>
+                            <div class="aaa">
+                                <div class="d-flex justify-content-between ">
+                                    <div>
+                                        <img src="#" class="mr-2"/>
+                                       Chris Wood posted somthing on Stacie Hall's timeline
+                                    </div>
+                                    <div>30m ago</div>
+                                </div>
+                                <small class="ml-5">Today 7:21pm</small> 
+                                <li class="list-group-item mb-3">
+                                    <div>
+                                         Etiam rhoncus.Maecenas tempus,tellus eget condimentum rhoncus,sem quam semper libero,sit amet adipiscing..
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="aaa">
+                                <div class="d-flex justify-content-between">
+                                    <div class="mt-3">
+                                       <img src="#" class="mr-2"/>
+                                       Stacien Hall posted a new blog
+                                    </div>
+                                    <div>1h ago</div>
+                                </div>
+                                <small class="ml-5">Today 6:35pm</small> 
+                            </div>
+                            <div class="form-group my-3">
+                                <button class="btn btn-primary text-white form-control">Lode more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <li class="list-group-item d-flex justify-content-between bg-transparent">
+                            <p>Calender</p>
+                            <div class="dropright">
+                                <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="C:\Users\pc\downloads\download (8).Png" height="20px" width="20px"/>
+                                </a>
+                                <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                   <a class="dropdown-item" href="#">Action</a>
+                                   <a class="dropdown-item" href="#">Another action</a>
+                                   <a class="dropdown-item" href="#">Somthing else here</a>
+                                </div>
+                            </div>  
+                        </li>
+                        <div class="card-body">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="C:\Users\pc\downloads\1.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\2.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\3.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\4.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\5.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\6.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\7.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\8.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="C:\Users\pc\downloads\9.jpg" class="d-block w-100" height="400px">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <li class="list-group-item d-flex justify-content-between bg-transparent">
+                            <p>Weekly sales</p>
+                            <div class="dropright">
+                                <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="C:\Users\pc\downloads\download (8).Png" height="20px" width="20px"/>
+                                </a>
+                                <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                   <a class="dropdown-item" href="#">Action</a>
+                                   <a class="dropdown-item" href="#">Another action</a>
+                                   <a class="dropdown-item" href="#">Somthing else here</a>
+                                </div>
+                            </div>  
+                        </li>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="C:\Users\pc\downloads\10.jpg" width="200px" height="200px"/>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Source</th>
+                                        <th>Revenue</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Success</td>
+                                        <td>$2602</td>
+                                        <td class="text-success">+43%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Primary</td>
+                                        <td>$1253</td>
+                                        <td class="text-success">+40%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Danger</td>
+                                        <td>$541</td>
+                                        <td class="text-success">+17%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <p>Latest Projects</p>
+                            <div class="dropright">
+                                <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="C:\Users\pc\downloads\download (8).Png" height="20px" width="20px"/>
+                                </a>
+                                <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                   <a class="dropdown-item" href="#">Action</a>
+                                   <a class="dropdown-item" href="#">Another action</a>
+                                   <a class="dropdown-item" href="#">Somthing else here</a>
+                                </div>
+                            </div>  
+                        </li>
+                        <div class="card-body">
+                            <table class="table table-stripped">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</th>
+                                        <td>Status</th>
+                                        <td>Assignee</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Appolo</td>
+                                        <td> <button class="btn btn-success text-white">Done</button> </td>
+                                        <td>Carl Jenkins</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Fireball</td>
+                                        <td> <button class="btn btn-danger text-white">Cancelled</button> </td>
+                                        <td>Bertha Martin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Hades</td>
+                                        <td> <button class="btn btn-success text-white">Done</button> </td>
+                                        <td>Stacie Hall</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Nitro</td>
+                                        <td> <button class="btn btn-Warning text-white">In progress</button> </td>
+                                        <td>Carl Jenkins</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Phoenix</td>
+                                        <td> <button class="btn btn-success text-white">Done</button> </td>
+                                        <td>Bertha Martin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Romeo</td>
+                                        <td> <button class="btn btn-success text-white">Done</button> </td>
+                                        <td>Ashely Briggs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Wombat</td>
+                                        <td> <button class="btn btn-Warning text-white">In progress</button> </td>
+                                        <td>Bertha Martin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Zircon</td>
+                                        <td> <button class="btn btn-danger text-white">Cancelled</button> </td>
+                                        <td>Stacie Hall</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <li class="list-group-item d-flex justify-content-between bg-transparent">
+                            <p>Weekly sales</p>
+                            <div class="dropright">
+                                <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="C:\Users\pc\downloads\download (8).Png" height="20px" width="20px"/>
+                                </a>
+                                <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                   <a class="dropdown-item" href="#">Action</a>
+                                   <a class="dropdown-item" href="#">Another action</a>
+                                   <a class="dropdown-item" href="#">Somthing else here</a>
+                                </div>
+                            </div>  
+                        </li>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="C:\Users\pc\downloads\download(10).PNG" width="800px" height="200px"/>
+                            </div>
+                        </div>
+                    </div>
+                   <li class="list-group-item mt-3 d-flex justify-content-between">
+                       <p>Support Help Center Privacy Terms of Service</p>
+                       <p>@ 2019-AppStack</p>
+                   </li>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>  
+</div>
+
+            
+<script>
+    function openpassword(){
+        $("#password").show('password');
+        $(".inactive").hide('inactive');
+    }
+    function opensignin(){
+        $(".inactive").show('inactive'); 
+        $("#password").hide('password');
+    }
+    function openregister(){
+        $("#register").show('register');
+        $(".inactive").hide('inactive');
+    }
+    function openregi(){
+        $(".inactive").show('inactive'); 
+        $("#register").hide('register');
+    }
+    function opensubmit(){
+        $("#submit").show('submit');
+        $(".inactive").hide('inactive');
+    }
+    function signout(){
+        $(".inactive").show('inactive'); 
+        $("#submit").hide('submit');
+    }
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
