@@ -237,14 +237,28 @@
 
 
 <script>
-    var xyz=[10,20,30,40,50,60];
-   
-   
-    for(var a=0;a<=xyz.length;a++)
-    {
-        alert(xyz[a])
+ var student={
+     "id asw":"100",
+     name:"xyz",
+     age:22,
+     percentage:"84%",
+     "getage":function(){
+         return this.age
+     },
+    ara:[1,3,5,7,9],
+    sub:{
+        asd:123,
+        gfd:"namsw",
+        per:"80%"
     }
-  
+
+     
+
+ };
+ student.total=400;
+ console.log(student["id asw"])
+ console.log(student)
+ delete student.getage()
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
