@@ -23,20 +23,18 @@
     /* function even(){
         var array=[10,31,42,68,21,102,101,1002,1003];
         for(var i=0;i<array.length;i++){
-            if(array[i]%2==0){
+            if(array[i]%2==0)
                 console.log(array[i]);
-            }
         }
     }
-    even(); */
+    even(); */ 
 
     /* var array=[10,31,42,68,21,102,101,1002,1003];
     function even(){
         var a=array.filter(function(val,i){
-           if (val % 2==0){
-               return val
-               }        
-            })
+           if (val%2==0)
+               return val;
+        })
         console.log(a);
     }
     even(); */
@@ -44,9 +42,8 @@
     /* var array=[10,31,42,68,21,102,101,1002,1003];
     function odd(){
         var a=array.filter(function(val,i){
-            if(val%2!=0){
-                return val
-            }
+            if(val%2!=0)
+                return val;
         })
         console.log(a);
     }
@@ -94,9 +91,8 @@
     ];
     function check(){
         var std=students.every(function(val,i){
-            if(val.per>=35){
-                return val
-            }
+            if(val.per>=35)
+                return val;
         })
         console.log(std);
     }
@@ -116,19 +112,14 @@
     ];
      function pass(){
         var std=students.filter(function(val,i){
-            if(val.per<=35){
-                return {
-                    "id":val.id,
-                    "name":val.name,
-                    "per":val.per
-                }
-            }
-            console.log(val);
+            if(val.per>=35)
+                return val;
         })
+        console.log(std);
     }
     pass(); */
 
-    /* var students=[
+   /* var students=[
         {"id":101,"name":"pall","per":30},
         {"id":102,"name":"madhu","per":20},
         {"id":103,"name":"yashu","per":10},
@@ -142,15 +133,10 @@
     ];
     function fail(){
         var std=students.filter(function(val,i){
-            if(val.per>=35){
-                return {
-                    "id":val.id,
-                    "name":val.name,
-                    "per":val.per
-                }
-            }
-            console.log(val);
+            if(val.per<=35)
+                return val;
         })
+        console.log(std);
     }
     fail(); */
 </script>
