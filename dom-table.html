@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<table class="table table-stripped" id="abc">
+    <thead>
+        <tr>
+          <th>S.Id</th>
+          <th>S.Name</th>
+          <th>S.Per</th>
+          <th>S.Total</th>
+        </tr>
+    </thead>
+    <tbody id="xyz">
+
+    </tbody>   
+</table>
+
+<button class="btn btn-primary pr-5 ml-5 " onclick="check()">click</button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+    var stds=[{id:101,name:"vasanthi",per:40,total:400},
+              {id:102,name:"susmitha",per:50,total:500},
+              {id:103,name:"saranya",per:60,total:600},
+              {id:104,name:"madhuri",per:70,total:700},
+              {id:105,name:"pallavi",per:80,total:800},
+              {id:106,name:"chaithanya",per:90,total:900},
+              {id:107,name:"yasaswini",per:83,total:830}
+            ];
+    function check(){
+        var std=stds.forEach(function(val,i){
+          var ele="<tr>"+
+                   "<td>"+val.id+"</td>"+
+                   "<td>"+val.name+"</td>"+
+                   "<td>"+val.per+"</td>"+
+                   "<td>"+val.total+"</td>"+
+                   "</td>"
+        document.getElementById("xyz").innerHTML=document.getElementById("xyz").innerHTML+ele;
+        })
+        
+    }
+</script>
+
+
+
