@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+    <div class="container-fluid px-0">
+        <ul class="list-group my-5" id="xyz">
+            
+        </ul>
+    </div>
+</div>
+ 
+<button class="btn btn-primary mx-5 btn-lg" onclick="check()">click</button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+/* var fruits=["apple","banana","mango","pineapple","orenge","grapes"];
+function check(){
+    document.getElementById("xyz").innerHTML='';
+    fruits.forEach(function(val,i){
+        var list='<li class="list-group-item">'+
+                   val+
+                  '</li>'
+        document.getElementById("xyz").innerHTML=document.getElementById("xyz").innerHTML +list;       
+    })
+} */
+
+var fruits=["apple","mango","pineapple","papaya","banana","orenge","grapes"];
+function check(){
+    document.getElementById("xyz").innerHTML='';
+    for(var i=0;i<fruits.length;i++){
+        var list='<li class="list-group-item">'+
+                 fruits[i]+
+                  '</li>'
+        document.getElementById("xyz").innerHTML=document.getElementById("xyz").innerHTML +list;
+    }
+}
+</script>
