@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container ">
+    <ul class="list-group" id="userlist">
+       <li class="list-group-item">
+           <h3>Names</h3>
+        </li>
+    </ul>
+</div>
+<button class="btn btn-success m-5" onclick="check()">click </button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    var http=new XMLHttpRequest();
+function check(){
+    
+    http.open("Get","https://jsonplaceholder.typicode.com/users");
+    http.send();
+    http.onreadystatechange=function(){
+        if(this.readyState==4){
+    
+            var res=JSON.parse(this.response)
+            prepareList(res);
+        }
+    }
+   
+}
+
+function prepareList(users){
+    var ele="";
+
+    users.forEach(function(obj,i){
+        ele='<li class="list-group-item text-right">'+
+        '<button class="btn btn-danger" onclick="abc('+obj.id+')">'+obj.name+'</button>'+
+        '</li>'
+        document.getElementById("userlist").innerHTML+=ele;
+    })
+}
+function abc(userId){
+   
+   var http=new XMLHttpRequest();
+   http.open('GET','https://jsonplaceholder.typicode.com/users/' +userId );
+   http.send();
+   http.onreadystatechange=function(){
+       if(this.readyState==4){
+           console.log(this.responseText);
+           var res=JSON.parse(this.responseText);
+       }
+   }
+}
+
+</script>

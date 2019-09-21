@@ -21,8 +21,6 @@
                 </tr>
             </thead>
             <tbody id="xyz">
-                
-
             </tbody>
         </table>
     </div>
@@ -37,24 +35,23 @@
 
 
 <script>
-    var http=new XMLHttpRequest();
 function check(){
+    var http=new XMLHttpRequest();
     
     http.open("Get","https://jsonplaceholder.typicode.com/users");
     http.send();
     http.onreadystatechange=function(){
         if(this.readyState==4){
-            console.log(this.response)
+        
             var details=JSON.parse(this.response)
+            userslist= details;
             properlist(details);
         }
     }
-    http.onerror=function(err){
-     debugger  
+}
 
-}
-}
 function properlist(users){
+    document.getElementById("xyz").innerHTML='';   
     var ele="";
     users.forEach(function(obj,i){
          ele='<tr>'+
@@ -66,7 +63,8 @@ function properlist(users){
                         obj.address.suite+"...."+
                         obj.address.city+"...."+
                         obj.address.zipcode+"...."+
-                        obj.address.geo.late+
+                        obj.address.geo.lat+"..."+
+                        obj.address.geo.lng+
                   '</td>'+
                   '<td>'+obj.address.city+'</td>'+
                   '<td>'+obj.phone+'</td>'+
@@ -77,14 +75,35 @@ function properlist(users){
                   '</td>'+
                   '<td>'+obj.address.zipcode+'</td>'+
                   '<td>'+
-                  '<button class="btn btn-success btn-sm">'+
+                  '<button class="btn btn-success btn-sm" onclick="getclick('+obj.id+')">'+
                      'edit'+                 
                    '</button>'+
                   '</td>'+
-                  
-        '</tr>'
+                '</tr>'
         document.getElementById("xyz").innerHTML+=ele;
     })
 }
+function getclick(userId){
+  /*  var http=new XMLHttpRequest();
+    http.open('Get','https://jsonplaceholder.typicode.com/users/' +userId);
+    http.send();
+    http.onreadystatechange=function(){
+        if(this.readyState==4){
+            console.log(this.responseText);
+            var res=JSON.parse(this.responseText);
+        }
+    } */
+   
+   
+   /* alert(userId) ;  */
+   
+
+   var data=userslist.filter(function(val,index){
+       return val.id==userId;
+   })
+   console.log(data);
+}
+
+
 
 </script>
