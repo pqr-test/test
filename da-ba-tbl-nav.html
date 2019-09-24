@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+    <div class="container-fluid" id="pass">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>username</th>
+                    <th>email</th>
+                    <th>address</th>
+                    <th>city</th>
+                    <th>phone</th>
+                    <th>website</th>
+                    <th>company</th>
+                    <th>zipcode</th>
+                    <th>
+                        <button class="btn btn-danger btn-sm">edit</button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="xyz">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<button class="btn btn-success m-5" onclick="check()">click </button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+    
+function check(){
+    var http=new XMLHttpRequest();
+    
+    http.open("Get","https://jsonplaceholder.typicode.com/users");
+    http.send();
+    http.onreadystatechange=function(){
+        if(this.readyState==4){
+        console.log(this.responseText)
+            var res=JSON.parse(this.responseText)
+            properlist(res);
+        }
+    }
+}
+
+function properlist(users){
+    document.getElementById("xyz").innerHTML='';   
+    var ele="";
+    users.forEach(function(obj,i){
+         ele='<tr>'+
+                  '<td>'+obj.id+'</td>'+
+                  '<td>'+obj.name+'</td>'+
+                  '<td>'+obj.username+'</td>'+
+                  '<td>'+obj.email+'</td>'+
+                  '<td>'+obj.address.street+'<br>'+
+                        obj.address.suite+'<br>'+
+                        obj.address.city+'<br>'+
+                        obj.address.zipcode+'<br>'+
+                        obj.address.geo.lat+'<br>'+
+                        obj.address.geo.lng+
+                  '</td>'+
+                  '<td>'+obj.address.city+'</td>'+
+                  '<td>'+obj.phone+'</td>'+
+                  '<td>'+obj.website+'</td>'+
+                  '<td>'+obj.company.name+'<br>'+
+                        obj.company.catchPhrase+'<br>'+
+                        obj.company.bs+
+                  '</td>'+
+                  '<td>'+obj.address.zipcode+'</td>'+
+                  '<td>'+
+                  '<a href="form3.html" onclick="navigation('+obj.id+')">'+
+                  'edit'+                 
+                   '</a>'+
+                  '</td>'+
+                '</tr>'
+        document.getElementById("xyz").innerHTML+=ele;
+    })
+}
+
+function navigation(userid){
+    localStorage.setItem("id",userid)
+   /* alert(userid) */
+   console.log(userid)
+}
+
+
+
+
+</script>
