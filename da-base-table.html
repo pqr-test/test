@@ -42,9 +42,9 @@ function check(){
     http.send();
     http.onreadystatechange=function(){
         if(this.readyState==4){
-        
+        console.log(this.response)
             var details=JSON.parse(this.response)
-            userslist= details;
+            form= details;
             properlist(details);
         }
     }
@@ -59,18 +59,18 @@ function properlist(users){
                   '<td>'+obj.name+'</td>'+
                   '<td>'+obj.username+'</td>'+
                   '<td>'+obj.email+'</td>'+
-                  '<td>'+obj.address.street+"...."+
-                        obj.address.suite+"...."+
-                        obj.address.city+"...."+
-                        obj.address.zipcode+"...."+
-                        obj.address.geo.lat+"..."+
+                  '<td>'+obj.address.street+'<br>'+
+                        obj.address.suite+'<br>'+
+                        obj.address.city+'<br>'+
+                        obj.address.zipcode+'<br>'+
+                        obj.address.geo.lat+'<br>'+
                         obj.address.geo.lng+
                   '</td>'+
                   '<td>'+obj.address.city+'</td>'+
                   '<td>'+obj.phone+'</td>'+
                   '<td>'+obj.website+'</td>'+
-                  '<td>'+obj.company.name+"...."+
-                        obj.company.catchPhrase+"...."+
+                  '<td>'+obj.company.name+'<br>'+
+                        obj.company.catchPhrase+'<br>'+
                         obj.company.bs+
                   '</td>'+
                   '<td>'+obj.address.zipcode+'</td>'+
@@ -98,7 +98,7 @@ function getclick(userId){
    /* alert(userId) ;  */
    
 
-   var data=userslist.filter(function(val,index){
+   var data=form.filter(function(val,index){
        return val.id==userId;
    })
    console.log(data);
