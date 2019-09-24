@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container inactive">
+    <div class="form-group">
+        <lable>Name:</lable>
+        <input class="form-control" id="name" type="text" placeholder="name"/>
+    </div>
+    <div class="form-group">
+        <lable>UserName:</lable>
+        <input class="form-control" id="username" type="text" placeholder="username"/>
+    </div>
+    <div class="form-group">
+        <lable>Email/Gmail:</lable>
+        <input class="form-control" id="email" type="email" placeholder="email"/>
+    </div>
+    <div class="form-group">
+        <lable>Address:</lable>
+        <input class="form-control" id="address" type="text" placeholder="text"/>
+    </div>
+    
+
+    <button class="btn btn-success mr-2 " onclick="save()">save</button>
+    <button class="btn btn-outline-primary " onclick="cancel()">cancel</button>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+ 
+    
+    var X=localStorage.getItem("id")
+    var http=new XMLHttpRequest();
+    
+    http.open('Get','https://jsonplaceholder.typicode.com/users/'+X);
+    http.send();
+    http.onreadystatechange=function(){
+        if(this.readyState==4){
+        console.log(this.responseText)
+            var res=JSON.parse(this.responseText)
+            form(res)
+           
+        }
+    }
+     function form(userid){
+      document.getElementById("name").value=userid.name
+      document.getElementById("username").value=userid.username
+      document.getElementById("email").value=userid.email
+      document.getElementById("address").value=userid.address.zipcode
+     }  
+     function cancel(){
+        location.href="file:///C:/Users/pc/Desktop/vbm/test/da-ba-tbl-nav.html"
+        
+    }
+</script>
