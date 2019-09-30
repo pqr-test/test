@@ -1,0 +1,69 @@
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container" id="xyz">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>username</th>
+                <th>email</th>
+                <th>phone</th>
+            </tr>
+        </thead>
+        <tbody id="abc">
+            
+        </tbody>
+    </table>
+<button class="btn btn-danger aaa">getusers</button>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    $(".aaa").click(function(){
+        var ele=event.target
+        getUsers();
+    })
+
+function getUsers(){    
+   $.ajax({
+    "url":"https://jsonplaceholder.typicode.com/users",
+    "method":"GET",
+    "success":function(res){
+        console.log(res);
+        preparetable(res);
+    },
+    "error":function(err){
+        console.log(err);
+    }
+  })
+}  
+ 
+function  preparetable(data){
+
+    var ele="";
+    data.forEach(function(obj,i){
+        ele='<tr>'+
+                 '<td>'+obj.id+'</td>'+
+                 '<td>'+obj.name+'</td>'+
+                 '<td>'+obj.username+'</td>'+
+                 '<td>'+obj.email+'</td>'+
+                 '<td>'+obj.phone+'</td>'+
+             '</tr>'
+    $("#abc").append(ele);
+  
+    })
+    
+} 
+
+</script>
+
