@@ -60,11 +60,11 @@ function prepareTable(data){
 $("#searchKey").keyup(function(event){
     
     var ele=event.target;
-    var sin=$(ele).val().toLowerCase();
+    var sin=$(ele).val();
    
-    if(sin.length>=2){
+    if(sin){
     var sout=users.filter(function(val,i){
-       return val.username.toLowerCase().indexOf(sin)!=-1;
+       return val.id==sin;
     
     })
     }
