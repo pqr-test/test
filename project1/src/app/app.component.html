@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div>{{title}}</div>
+<h1>{{getusers()}}</h1>
+<ul>
+    <li *ngIf="users2.length>0">{{users2}}</li>
+</ul>
+<li *ngFor="let data of users1">{{data.name}}</li>
+
+
