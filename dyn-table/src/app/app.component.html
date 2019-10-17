@@ -1,0 +1,30 @@
+<div class="thead">
+    <tr class="aaa">
+        <th>Id</th>
+        <th>Name</th>
+        <th >Email</th>
+        <th>City</th>
+        <th>Phone</th>
+    </tr>
+</div>
+<div class="table">  
+<tr *ngIf="users.length>0">
+ 
+    <td class="bbb">
+        <li *ngFor="let data of users">{{data.id}}</li>
+    </td>
+    <td class="bbb">
+        <li *ngFor="let data of users">{{data.name}}</li>
+    </td>
+    <td>
+        <li *ngFor="let data of users">{{data.email}}</li>
+    </td>
+    <td class="ccc">
+        <li *ngFor="let data of users">{{data.address.city}}</li>
+    </td>
+    <td>
+        <li *ngFor="let data of users">{{data.phone}}</li>
+    </td>
+   
+</tr>
+</div> 
