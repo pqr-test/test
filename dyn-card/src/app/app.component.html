@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card" *ngFor="let data of users">
+    <div class="card-header" >
+       <ol>
+         <li >Header#{{data.id}}</li>
+       </ol>
+    </div>
+    <div class="card-body" >
+       <ol>
+         <li >Name:{{data.name}}</li>
+         <li >Email:{{data.email}}</li>
+         <li >Username:{{data.username}}</li>
+         <li >City:{{data.address.city}}</li>
+         <li >Phone.no:{{data.phone}}</li>
+       </ol>
+    </div>
+  </div>
+</div>
