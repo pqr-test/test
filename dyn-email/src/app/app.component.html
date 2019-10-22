@@ -1,0 +1,14 @@
+<div class="container">
+  <h3>Emails:</h3>
+  <ol class="list">
+    <li *ngFor="let data of users">{{data.email}}</li>
+  </ol>
+  <h3>Names:</h3>
+  <ol class="name" *ngIf="users.length > 0">
+    <li *ngFor="let data of users; let i=index"  >
+      <span  *ngIf="i%2==0">
+        {{data.name}} {{i}}
+      </span> 
+    </li>
+  </ol>
+</div>
