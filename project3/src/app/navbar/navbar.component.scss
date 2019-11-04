@@ -1,0 +1,28 @@
+.navbar-container{
+    height: 40px;
+    width: 100%;
+    border-bottom:1px solid wheat ;
+   text-align: center;
+}
+a{
+    text-decoration: none;
+    
+    text-align: center;
+    
+}
+ul{
+    list-style: none;
+    padding: 30px;
+}
+li{
+    display: inline-block;
+    padding: 15px;
+    :hover{
+        background-color: yellow;
+        padding: 5px;
+    }
+}
+.active{
+    background-color: red;
+    color: white;
+}
