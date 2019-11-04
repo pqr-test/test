@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of users" id="{{data.id}}">
+            <td>
+                <a href="#/form/:{{data.id}}" >{{data.id}}</a>
+            </td>
+            <td>{{data.name}}</td>
+            <td>{{data.username}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.address.city}}</td>
+            <td>{{data.phone}}</td>
+            <td>
+                <button (click)="gotoform($event)">edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
