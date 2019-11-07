@@ -11,28 +11,25 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class FormComponent {
  public id:any=null;
+ public currentuser;
  constructor(private route:ActivatedRoute){
-       
-     var self=this;
+    var self=this;
      this.route.params.subscribe(
-         function (res){
-             self.id=res.id;
-             alert(self.id)
-             
-             self.getInfo()
-         }
+         (res) => {
+             this.id=res.id;
+             alert(this.id)
+             this.getInfo()
+        }
         )
     }
-    
     getInfo(){
+        var that=this;
         $.ajax({
-            url:"https://jsonplaceholder.typicode.com/users/"+this.id,
+            url:"https://jsonplaceholder.typicode.com/users/"+that.id,
             method:"Get",
             success:function(res){
-                console.log(res)
-              
-               
-               
+                that.currentuser =res;
+                console.log(that.currentuser)
             }
         })
      }

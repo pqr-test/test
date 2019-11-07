@@ -8,23 +8,23 @@ import { Router } from '@angular/router';
     styleUrls:["table.component.scss"]
 })
 export class TableComponent implements OnInit {
- private   users:any=[]
+  private  users:any=[]
 constructor(private route:Router){}
     ngOnInit(){
     var that=this;
         $.ajax({
           url:"https://jsonplaceholder.typicode.com/users",
           method:"Get",
-          success:function(res){
+          success:function(res: any){
             console.log(res)
             that.getusers(res);
           }
         })  
     }
-    getusers(data){
+    getusers(data: any){
         this.users=data;
     }
-    gotoform($event){
-        this.route.navigate(['form/:id']);
+    gotouseredit(data){
+        this.route.navigate(["form",data]);
     }
 }

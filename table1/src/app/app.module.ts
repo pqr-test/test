@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { UsereditComponent } from 'src/useredit/useredit.component';
 
 const Routes=[
   {
@@ -22,6 +23,10 @@ const Routes=[
   {
     path:"home",
     component:HomeComponent
+  },
+  {
+    path:"useredit/:userId",
+    component:UsereditComponent
   }
 ];
 @NgModule({
@@ -29,7 +34,8 @@ const Routes=[
     AppComponent,
     TableComponent,
     FormComponent,
-    HomeComponent
+    HomeComponent,
+    UsereditComponent
     
   ],
   imports: [
