@@ -24,7 +24,8 @@ $.ajax({
 gototable(data){
    this.users=data;
 }
-gotohome($event){
-    this.route.navigate(['form/:id']);
+
+gotohome(data){
+    this.route.navigate(['form',data]);
 }
 }
