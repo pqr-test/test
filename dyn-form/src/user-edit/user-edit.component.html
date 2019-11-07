@@ -1,0 +1,21 @@
+<div class="form-group card">
+    <label>Id:</label>
+    <input type="text" class="form-control" value="{{currentuser.id}}" (change)="change1($event)"/>
+
+    <label>Name:</label>
+    <input type="text" class="form-control" value="{{currentuser.name}}" (change)="change2($event)"/>
+
+    <label>Username</label>
+    <input type="text" class="form-control" value="{{currentuser.username}}" (change)="change3($event)"/>
+
+    <label>Email:</label>
+    <input type="email" class="form-control" value="{{currentuser.email}}"(change)="change4($event)"/>
+
+    <label>Address:</label>
+    <input type="text" class="form-control" value="{{currentuser.address.city}}" (change)="change5($event)"/>
+
+    <label>phone:</label>
+    <input type="text" class="form-control" value="{{currentuser.phone}}" (change)="change6($event)"/>
+</div>
+
+<button class="btn btn-success ml-5" (click)="update($event)">update</button>

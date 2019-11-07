@@ -1,0 +1,43 @@
+<div>
+    <div class="form-group ml-4">
+        <label>Username:</label>
+        <input type="text"  class="form-inline" (keyup)="handlename($event)"  placeholder="Enter name"/>
+        
+            <h2 *ngIf="name;else xyz then abc">display name:{{name}}</h2>
+        <ng-template #xyz>
+            <h4>Please enter name</h4>
+        </ng-template>
+        <ng-template #abc>
+            <h4>Name is:{{name}}</h4>
+        </ng-template>
+        <input type="text" (keyup)="searchkey($event)" class="form-inline mb-3 px-3 mr-2" id="search" placeholder="search name" (keyup)="tableInfo($event)" /> 
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let data of users" >
+               <td>
+                   <a href="#/user-edit/{{data.id}}">{{data.id}}</a>
+                </td>
+               <td>{{data.name}}</td>
+               <td>{{data.username}}</td>
+               <td>{{data.email}}</td>
+               <td>{{data.address.city}}</td>
+               <td>{{data.phone}}</td>
+               <td>
+                   <button class="btn btn-outline-primary" (click)="gotoview(data.id)">view</button>
+               </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
