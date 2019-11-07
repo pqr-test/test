@@ -1,0 +1,19 @@
+.header-container{
+    background-color: blue;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+img{
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
