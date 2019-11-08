@@ -1,0 +1,4 @@
+<h1>{{title}}</h1>
+<button id="xyz" (click)="Rename()">Rename</button>
+<button id="abc" (click)="Reset()">Reset</button>
+<app-header [name]="title" [data]="users" (triggerRename)="Rename()" (triggerReset)="Reset()"></app-header>
