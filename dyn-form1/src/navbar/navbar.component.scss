@@ -1,0 +1,17 @@
+.navbar{
+    background-color: grey;
+    
+    ul{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    li{
+        text-decoration: none;
+        list-style: none; 
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}

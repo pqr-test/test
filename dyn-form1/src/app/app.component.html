@@ -1,4 +1,7 @@
-<h1>{{title}}</h1>
+<h3>{{title}}</h3>
 <button id="xyz" (click)="Rename()">Rename</button>
 <button id="abc" (click)="Reset()">Reset</button>
-<app-header [name]="title" [data]="users" (triggerRename)="Rename()" (triggerReset)="Reset()"></app-header>
+<app-header [name]="title" [data]="user" (triggerRename)="Rename()" (triggerReset)="Reset()"></app-header>
+<app-nav></app-nav>
+<app-tile></app-tile>
+

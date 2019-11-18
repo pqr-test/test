@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UsersService } from 'src/service/users.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dyn-form1';
-  public users:any={
+  public user:any={
       name:"madhu",
       email:"malli@gmail.com"
   }
@@ -17,4 +18,5 @@ export class AppComponent {
   Reset(){
     this.title="dyn-form1";
   }
+ 
 }
