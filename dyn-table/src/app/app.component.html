@@ -1,3 +1,5 @@
+<h1 style="background-color: yellow;text-align: center;">{{title | uppercase}}</h1>
+
 <div class="thead">
     <tr class="aaa">
         <th>Id</th>
@@ -11,7 +13,7 @@
 <tr *ngIf="users.length>0">
  
     <td class="bbb">
-        <li *ngFor="let data of users">{{data.id}}</li>
+        <li *ngFor="let data of users">{{data.id | abclower}}</li>
     </td>
     <td class="bbb">
         <li *ngFor="let data of users">{{data.name}}</li>
