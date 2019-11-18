@@ -35,30 +35,26 @@ export class UserEditComponent {
             }
         )
     }
-    change1(event){
+    change(key,event){
+        if(key=='id'){
         this.id=event.target.value;
-         console.log(this.id)   
-    }
-    change2(event){
-        this.name=event.target.value;
-            console.log(this.name)
         }
-    change3(event){
-        this.username=event.target.value;
-        console.log(this.username)
+        else if(key=='name'){
+            this.name=event.target.value;
+        }
+        else if(key=='username'){
+            this.username=event.target.value;
+        }
+        else if(key=='email'){
+            this.email=event.target.value;
+        }
+        else if(key=='address.city'){
+            this.address=event.target.value;
+        }
+        else if(key=='phone'){
+            this.phone=event.target.value;
+        }
     }
-    change4(event){
-        this.email=event.target.value;
-            console.log(this.email)
-    }  
-    change5(event){
-        this.address=event.target.value;
-            console.log(this.address)
-    }
-    change6(event){
-        this.phone=event.target.value;
-            console.log(this.phone)
-    } 
     update($event){
         var data:any=[{
             "id":this.id,
