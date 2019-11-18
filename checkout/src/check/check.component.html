@@ -1,0 +1,198 @@
+<div class="container px-0">
+    <div class="img my-5">
+        <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" height="60px" width="60px"/>
+        <h2>Checkout form</h2>
+        <div class="ppp">
+            <p>
+                Below is an example form built entirely with Bootstrap’s form controls.
+                Each required form group has a validation state that 
+                can be triggered by attempting to submit the form without completing it.
+            </p>
+        </div>
+    </div>
+    <div class=" row form-group abc">
+       <div class="left col-md-8">
+            <h4>Billing address</h4>
+            <div class="row">
+            <div class="col-md-6">
+                <label>First name</label>
+                <input class="form-control" type="text" [(ngModel)]="Firstname"/>
+                
+            </div>
+            <div class="col-md-6">
+                <label>Last name</label>
+                <input class="form-control" type="text" [(ngModel)]="Lastname"/>
+            </div>
+            </div>
+            <div class="row my-3">
+            <div class="col">
+                <label>Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="Username"/>
+                </div>
+            </div>
+            </div>
+            <div class="row ">
+            <div class="col">
+                <label>Email(optional)</label>
+                <input class="form-control" type="text" placeholder="you@example.com" [(ngModel)]="Email"/>
+            </div>
+            </div>
+            <div class="row my-3 ">
+            <div class="col">
+                <label>Address</label>
+                <input class="form-control" type="text" placeholder="1234 Main st" [(ngModel)]="street"/>
+            </div>
+            </div>
+            <div class="row ">
+            <div class="col">
+                <label>Address 2 (optional)</label>
+                <input class="form-control" type="text" placeholder="Apartment or suite" [(ngModel)]="city"/>
+            </div>
+            </div>
+            <div class="row bor my-3 ">
+            <div class="col-md-5">
+                <label>Country</label>
+                <select class="custom-select" [(ngModel)]="Country">
+                    <option>choose...</option>
+                    <option>India</option>
+                    <option>United states</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label>State</label>
+                <select class="custom-select"[(ngModel)]="state">
+                    <option>choose...</option>
+                    <option>Andhra pradesh</option>
+                    <option>California</option>
+                </select>
+            </div>
+            <div class="col-md-3 borb">
+                <label>Zip</label>
+                <input type="text" class="form-control" [(ngModel)]="zip"/>
+            </div>
+            </div>
+            <div>
+                <div class="custom-control custom-checkbox mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                    <label class="custom-control-label" for="customControlAutosizing">
+                      Shipping address is the same as my billing address
+                    </label>
+                </div>
+                <div class="custom-control custom-checkbox mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing1">
+                    <label class="custom-control-label" for="customControlAutosizing1">
+                        Save this information for next time
+                    </label>
+                </div>
+            </div>
+            <div>
+             <h4>Payment</h4>
+             <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Credit card</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Debit card</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">PayPal</label>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-6">
+                <label>Name on card</label>
+                <input type="text" class="form-control" [(ngModel)]="cardname"/>
+                <small>Full name as displayed on card</small>
+              </div>
+              <div class="col-md-6">
+                <label>Credit card number</label>
+                <input type="text" class="form-control" [(ngModel)]="cardnumber"/>
+                
+              </div>
+            </div>
+            <div class="row bor2 my-3 borb2 pb-3">
+                <div class="col-md-3">
+                   <label>Expiration</label>
+                   <input type="text" class="form-control" [(ngModel)]="Expiration"/>
+                </div>
+                <div class="col-md-3">
+                    <label>CVV</label>
+                    <input type="text" class="form-control" [(ngModel)]="CVV"/>
+                </div>
+            </div>
+            <div class="row">
+             <div class="col my-3">
+               <button class="btn btn-primary form-control" (click)="update($event)">Continue to checkout</button>
+             </div>
+            </div>
+        </div>
+        <div class="right col-md-4">
+            <div class="cart">
+              <h4>Your cart</h4>
+              <h6 id="bbb">3</h6>
+            </div>
+            <div class="card row">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Product name</h6>
+                            <small>Brief description</small>
+                        </div>
+                        <span>$12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Second product</h6>
+                            <small>Brief description</small>
+                        </div>
+                        <span>$8</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Third item</h6>
+                            <small>Brief description</small>
+                        </div>
+                        <span>$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between ccc">
+                        <div>
+                            <h6>Promo code</h6>
+                            <small>EXAMPLECODE</small>
+                        </div>
+                        <span>-$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <h6>Total (USD)</h6>
+                        <h6>$20</h6>
+                    </li>
+                </ul>  
+            </div> 
+            <div class="card row mt-3">  
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Promo code"/>
+                            <div class="input-group-append">
+                                <button class="btn btn-dark ">Redeem</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>    
+        </div>    
+    </div>
+    <div class="text-center my-3">
+        <div> © 2017-2019 Company Name</div>
+        <div>
+            <a href="#">Privacy</a>
+            <a href="#" id="xyz">Terms</a>
+            <a href="#">Support</a>
+        </div>
+    </div>
+</div>
