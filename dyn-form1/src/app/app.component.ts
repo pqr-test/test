@@ -8,6 +8,7 @@ import { UsersService } from 'src/service/users.service';
 })
 export class AppComponent {
   title = 'dyn-form1';
+  email='pallavi@123'
   public user:any={
       name:"madhu",
       email:"malli@gmail.com"
@@ -18,5 +19,7 @@ export class AppComponent {
   Reset(){
     this.title="dyn-form1";
   }
+
+ 
  
 }
