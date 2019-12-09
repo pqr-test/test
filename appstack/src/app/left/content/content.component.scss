@@ -4,11 +4,12 @@
 .bbb{
     padding: 20px;
 }
-.active{
-    background-color: yellow;
-    
-        color: black;
-    }
+
 a{
     color: white;
+    text-decoration: none;
 }
+ul,li{
+    list-style: none;
+}
+
