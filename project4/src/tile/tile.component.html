@@ -1,0 +1,11 @@
+<div class="mt-5">
+    <accordion class="mx-5" *ngFor="let data of users">
+        <accordion-group  heading="UserId : {{data.id}}" class="aaa">
+            <p>Name : {{data.name}}</p>
+            <p>Username : {{data.username}}</p>
+            <p>Email : {{data.email}}</p>
+            <p>City : {{data.address.city}}</p>
+            <p>Phone : {{data.phone}}</p>
+        </accordion-group>
+    </accordion>
+</div>

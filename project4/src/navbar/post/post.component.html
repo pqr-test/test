@@ -1,0 +1,38 @@
+
+
+<div class="container my-5">
+    
+    <div class="form-group">
+        <ng-select [items]="users"
+                    bindLabel="title"
+                    bindValue="id"
+                    placeholder="select title"
+                    (change)="selectedId($event)"
+                    [(ngModel)]="selectedTitle">
+        </ng-select>
+        <p>User Info:{{selectedTitle | json}}</p> 
+    </div>
+    
+    <table class="table my-5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of users">
+                <td>{{data.id}}</td>
+                <td>{{data.title}}</td>
+                <td>{{data.body}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">
+                        <a routerLink="/postTile">edit</a>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

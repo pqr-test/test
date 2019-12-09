@@ -1,0 +1,15 @@
+a{
+    color: white;
+}
+th{
+    background-color: blue;
+    color: white;
+}
+tr:nth-child(odd){
+    background-color: green;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: red;
+    color: white;
+}

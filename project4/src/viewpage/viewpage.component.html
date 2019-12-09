@@ -1,0 +1,21 @@
+<div class="form-group m-5">
+    <label>Id:</label>
+    <input class="form-control" type="text" value="{{currentusers.id}}"/>
+
+    <label>Username:</label>
+    <input class="form-control" type="text" value="{{currentusers.username}}"/>
+
+    <label>Name:</label>
+    <input class="form-control" type="text" value="{{currentusers.name}}"/>
+
+    <label>Email:</label>
+    <input class="form-control" type="email" value="{{currentusers.email}}"/>
+
+    <label>City:</label>
+    <input class="form-control" type="text" value="{{currentusers.address.city}}"/>
+    
+    <div  class="mt-3">
+       <button class="btn btn-success">submit</button> 
+       <button class="btn btn-danger ml-3" (click)="gotousers()">cancel</button>
+    </div>
+</div>

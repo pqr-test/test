@@ -1,0 +1,82 @@
+
+
+<div class="container mt-5">
+    
+   <div class="form-group my-4">
+        <ng-select [items]="users"
+                   bindLabel="username"
+                   bindValue="id"
+                   placeholder="select username"
+                   (change)="searchkey($event)"
+                   [(ngModel)]="selectedUserame">
+        </ng-select>
+        <p>User Info:{{selectedUserame | json}}</p>
+    </div>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of users">
+                <td>
+                    <a routerLink="/viewpage/{{data.id}}">{{data.id}}</a>
+                </td>
+                <td>
+                    <button type="button" tooltip="{{data.name}}"
+                        placement="top"  triggers="focus">
+                       {{data.name}}
+                    </button>
+                </td>
+                <td>{{data.username}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.address.city}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm"(click)="openModal(template)">
+                        Edit
+                    </button>
+                    <button class="ml-2 btn btn-sm btn-secondary">
+                        <a class="text-white" routerLink="/tile">View</a>
+                    </button>
+                    
+                    <ng-template #template>
+                        <div class="modal-header">
+                            <h4 class="modal-title pull-left">Modal</h4>
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body form-group mt-2">
+                            <label>Id:</label>
+                            <input type="text" class="form-control" value="{{data.id}}"/>
+                            
+                            <label>Username:</label>
+                            <input type="text" class="form-control" value="{{data.username}}"/>
+                            
+                            <label>Name:</label>
+                            <input type="text" class="form-control" value="{{data.name}}"/>
+
+                            <label>Email:</label>
+                            <input type="email" class="form-control" value="{{data.name}}"/>
+
+                            <label>City</label>
+                            <input type="text" class="form-control" value="{{data.name}}"/>
+                            
+                            <div class="mt-3">
+                               <button type="button" (click)="modalRef.hide()" class="btn btn-primary mr-2">cancel</button>
+                               <button type="button" class="btn btn-success" (click)="validate()">submit</button>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
